@@ -1,3 +1,4 @@
+// Dominic R, 7/22/2021
 
 program count_nonascii
 	syntax [varlist(string default=none)]
@@ -9,7 +10,6 @@ program count_nonascii
 
 	local affected 0
 	local total 0
-
 	foreach v of varlist `varlist' {
 		quietly count if ustrregexm(`v',"[^ -~]")
 		local affected = `affected' + r(N)
@@ -20,6 +20,5 @@ program count_nonascii
 
 		quietly drop _nonascii _subtotal
 	}
-
 	display "There are `total' Unicode characters in `affected' values"
 end
