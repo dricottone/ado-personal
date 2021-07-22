@@ -22,3 +22,4 @@ program count_nonascii
 	}
 	display "There are `total' Unicode characters in `affected' values"
 end
+
